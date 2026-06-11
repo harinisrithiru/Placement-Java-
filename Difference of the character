@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        int starCount = 0, hashCount = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '*') {
+                starCount++;
+            } else if (str.charAt(i) == '#') {
+                hashCount++;
+            }
+        }
+
+        int difference = starCount - hashCount;
+
+        System.out.print("The Difference of the character in the given string: ");
+
+        if (Math.abs(difference) % 2 == 0) {
+            System.out.printf("%02d", difference);
+        } else {
+            System.out.printf("%03d", difference);
+        }
+    }
+}
