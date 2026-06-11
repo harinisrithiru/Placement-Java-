@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int divisor = sc.nextInt();
+
+        ArrayList<Integer> list = new ArrayList<>();
+        int count = 0, sum = 0;
+
+        for(int i = 0; i < n; i++) {
+            if(arr[i] % divisor == 0) {
+                list.add(arr[i]);
+                count++;
+                sum += arr[i];
+            }
+        }
+
+        System.out.print("The elements that are divisible by " + divisor + " is ");
+        for(int num : list) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        System.out.println("The Count of the value that is divisible by " + divisor + " is " + count);
+        System.out.println("The Sum of value that is divisible by " + divisor + " is " + sum);
+    }
+}
