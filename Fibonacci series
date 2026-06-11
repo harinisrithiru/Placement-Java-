@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        if (n < 1 || n > 20 || m < 1 || m > 20) {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        int a = 0, b = 1;
+        double sum = 0;
+
+        for (int pos = 1; pos <= m; pos++) {
+
+            int fib;
+
+            if (pos == 1)
+                fib = 0;
+            else if (pos == 2)
+                fib = 1;
+            else {
+                fib = a + b;
+                a = b;
+                b = fib;
+            }
+
+            if (pos >= n && pos <= m) {
+                sum += fib;
+            }
+        }
+
+        System.out.println("The Sum of Fibonacci value is " + sum);
+    }
+}
